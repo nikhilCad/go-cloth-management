@@ -12,3 +12,6 @@ Included in backend
 Food - Cloth
 Table - Counter
 Menu - Inventory
+
+Using gin for routing
+Default port : 8000
