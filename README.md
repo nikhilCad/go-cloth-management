@@ -13,6 +13,8 @@ Food - Cloth
 Table - Counter
 Menu - Inventory
 
+restaurant - cloth_shop
+
 Using gin for routing
 Default port : 8000
 
