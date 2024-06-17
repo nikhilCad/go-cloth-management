@@ -19,3 +19,5 @@ Using gin for routing
 Default port : 8000
 
 cloth-management-system
+
+Passwords -> We don't store the password, we store the hashes and then match those hashes
