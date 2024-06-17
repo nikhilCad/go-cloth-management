@@ -15,3 +15,5 @@ Menu - Inventory
 
 Using gin for routing
 Default port : 8000
+
+cloth-management-system

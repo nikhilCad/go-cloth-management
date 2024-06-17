@@ -31,6 +31,7 @@ func main() {
 	router.Use(middleware.Authentication())
 
 	// Initializing routes
+	// functions defined in routes folder
 	routes.ClothRoutes(router)
 	routes.InventoryRoutes(router)
 	routes.CounterRoutes(router)
