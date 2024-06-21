@@ -5,11 +5,16 @@ import (
 	"time"
 	"cloth-management-system/database"
 	"cloth-management-system/models"
+	"net/http"
+	"fmt"
+	"math"
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
 
 	"go.mongodb.org/mongo-driver/mongo"
+	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	
 )
 
@@ -81,7 +86,7 @@ func CreateCloth() gin.HandlerFunc {
 
 		// insert this above data into our collection
 		result, insertErr := clothCollection.InsertOne(ctx, cloth)
-			
+
 		if insertErr != nil {
 			msg := fmt.Sprintf("Cloth item was not created")
 			c.JSON(http.StatusInternalServerError, gin.H{"error": msg})
@@ -91,6 +96,15 @@ func CreateCloth() gin.HandlerFunc {
 		c.JSON(http.StatusOK, result)
 		
 	}
+}
+
+func round(num float64) int {
+	return int(num + math.Copysign(0.5, num))
+}
+
+func toFixed(num float64, precision int) float64 {
+	output := math.Pow(10, float64(precision))
+	return float64(round(num*output)) / output
 }
 
 func UpdateCloth() gin.HandlerFunc {

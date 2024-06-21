@@ -2,7 +2,11 @@ package controller
 
 import (
 
+	"cloth-management-system/database"
+
 	"github.com/gin-gonic/gin"
+
+	"go.mongodb.org/mongo-driver/mongo"
 )
 
 var counterCollection *mongo.Collection = database.OpenCollection(database.Client, "counter")

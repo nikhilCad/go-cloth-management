@@ -1,12 +1,13 @@
 package controller
 
 import (
-
 	"log"
 	"fmt"
+	"cloth-management-system/database"
 
 	"github.com/gin-gonic/gin"
 	"golang.org/x/crypto/bcrypt"
+	"go.mongodb.org/mongo-driver/mongo"
 )
 
 var userCollection *mongo.Collection = database.OpenCollection(database.Client, "user")
