@@ -21,3 +21,9 @@ Default port : 8000
 cloth-management-system
 
 Passwords -> We don't store the password, we store the hashes and then match those hashes
+
+Types/Interfaces are stored in models folder
+
+routes folder has all the routes and binding to functions
+
+controllers folder has the actual functionality of these functions defined in router
